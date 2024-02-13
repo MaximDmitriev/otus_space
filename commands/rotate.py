@@ -1,5 +1,6 @@
 from interfaces.command import Command
 from interfaces.rotatable import Rotatable
+from errors.error_handler import BaseAppException
 
 class Rotate(Command):
     '''
@@ -13,19 +14,19 @@ class Rotate(Command):
         try:
             direction = self.obj.get_direction()
         except:
-            raise Exception("property 'direction' cannot be read")
+            raise BaseAppException("property 'direction' cannot be read")
         
         try:
             n = self.obj.get_direction_numbers()
         except:
-            raise Exception("property 'direction_numbers' cannot be read")
+            raise BaseAppException("property 'direction_numbers' cannot be read")
 
         try:
             velocity = self.obj.get_angular_velocity()
         except:
-            raise Exception("property 'angular_velocity' cannot be read")
+            raise BaseAppException("property 'angular_velocity' cannot be read")
 
         try:
             self.obj.set_direction((direction + velocity) % n)
         except:
-            raise Exception("object cannot be rotated")
+            raise BaseAppException("object cannot be rotated")
