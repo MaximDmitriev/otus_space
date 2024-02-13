@@ -1,5 +1,6 @@
 from interfaces.rotatable import Rotatable
 from interfaces.gameobject import GameObject
+from htypes.vector import Vector
 
 class RotatableAdapter(Rotatable):
     '''
@@ -20,3 +21,9 @@ class RotatableAdapter(Rotatable):
 
     def set_direction(self, direction: int) -> None:
         self.obj.set_property('direction', direction)
+
+    def set_velocity(self, vector: Vector) -> None:
+        self.obj.set_property('velocity', vector)
+
+    def get_velocity(self) -> Vector:
+        return self.obj.get_property('velocity')
