@@ -6,6 +6,7 @@ from tests.check_fuel import TestCheckFuel
 from tests.burn_fuel import TestBurnFuel
 from tests.change_velocity import TestChangeVelocity
 from tests.macrocmd import TestMacro
+from tests.ioc import TestIoCRootScope, TestIoCChildren
 
 
 if __name__ == '__main__':

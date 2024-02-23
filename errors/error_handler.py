@@ -4,6 +4,13 @@ from interfaces.command import Command
 class BaseAppException(Exception):
     pass
 
+
+class ScopeNotFoundException(Exception):
+    pass
+
+class CmdNotFoundException(Exception):
+    pass
+
 class ErrorHandler:
     '''
     обработчик ошибок
