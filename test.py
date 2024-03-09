@@ -7,6 +7,7 @@ from tests.burn_fuel import TestBurnFuel
 from tests.change_velocity import TestChangeVelocity
 from tests.macrocmd import TestMacro
 from tests.ioc import TestIoCRootScope, TestIoCChildren
+from tests.generator import TestAdapterGenerator
 
 
 if __name__ == '__main__':

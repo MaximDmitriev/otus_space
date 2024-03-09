@@ -16,6 +16,9 @@ class Movable(ABC):
         pass
 
     @abstractmethod
-    def get_velocity(self) -> Vector:
+    def set_velocity(self, vector: Vector) -> None:
         pass
 
+    @abstractmethod
+    def get_velocity(self) -> Vector:
+        pass

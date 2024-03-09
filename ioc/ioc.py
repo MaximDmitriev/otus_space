@@ -14,6 +14,14 @@ class IoC:
     '''
     Контейнер инверсии зависимотей
     '''
+
+    def __new__(cls):
+        '''синглтон'''
+        if not hasattr(cls, 'instance'):
+            cls.instance = super(IoC, cls).__new__(cls)
+        return cls.instance
+
+
     def __init__(self):
         root_scope: Scope = Scope(name="root").set_strategy(DEFAULT_STRATEGY)
         ThreadData.root_scope = root_scope
@@ -25,10 +33,11 @@ class IoC:
 
         for scope in ThreadData.current_scope:
             resolver = scope.strategy.get(key)
+
             if resolver:
                 return resolver(*args)
             
-        raise CmdNotFoundException('command not found')
+        raise CmdNotFoundException(f'{key} command not found')
     
 
 
