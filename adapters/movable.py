@@ -18,3 +18,6 @@ class MovableAdapter(Movable):
 
     def get_velocity(self) -> Vector:  
         return self.obj.get_property('velocity')
+    
+    def set_velocity(self, vector: Vector) -> None:
+        self.obj.set_property('velocity', vector)
